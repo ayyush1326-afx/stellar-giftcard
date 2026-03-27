@@ -32,7 +32,7 @@ fn test_time_lock_success() {
         &token_addr,
         &1000,
         &LockType::Time,
-        &Some(100),
+        &Some(100u64),
         &None,
     );
 
@@ -72,7 +72,7 @@ fn test_time_lock_failure() {
         &token_addr,
         &1000,
         &LockType::Time,
-        &Some(100),
+        &Some(100u64),
         &None,
     );
 
@@ -109,7 +109,7 @@ fn test_hash_lock_success() {
         &1000,
         &LockType::Hash,
         &None,
-        &Some(actual_hash),
+        &Some(actual_hash.into()),
     );
 
     vault_client.claim(&Some(answer));
@@ -149,7 +149,7 @@ fn test_hash_lock_failure() {
         &1000,
         &LockType::Hash,
         &None,
-        &Some(actual_hash),
+        &Some(actual_hash.into()),
     );
 
     let wrong_answer = Bytes::from_slice(&env, b"wrong answer");

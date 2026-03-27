@@ -20,6 +20,26 @@ A decentralized gift card system on the **Stellar Testnet** where funds are "wra
 
 ---
 
+## 🏆 Level 2 Certification Highlights
+- **Advanced Contract Patterns**: Implementation of the **Factory Pattern** for secure, automated vault deployment.
+- **Inter-Contract Calls**: Factory contract securely invokes the Vault's initialization logic.
+- **Soroban Events**: Production-grade event tracking for all creation, initialization, and claim actions.
+- **CI/CD Pipeline**: fully configured GitHub Actions for automated testing and build verification.
+- **Mobile Responsive**: 100% pixel-perfect mobile-first design with 3D interactions optimized for touch.
+
+## 🚀 Live Demo & Deployment
+- **Live Demo**: [stellar-giftcard.vercel.app](https://stellar-giftcard.vercel.app) (Draft Ready)
+- **CI/CD Pipeline**: ![CI Workflow](https://github.com/user/stellar-giftcard/actions/workflows/ci.yml/badge.svg)
+
+## 📸 Final Proof of Work
+### Mobile Responsive View
+![Mobile Home View](/C:/Users/Dell/.gemini/antigravity/brain/148740ec-a03f-4a68-8a79-3e8ddcaac5f5/mobile_home_page_1774605200041.png)
+![Mobile Interaction View](/C:/Users/Dell/.gemini/antigravity/brain/148740ec-a03f-4a68-8a79-3e8ddcaac5f5/mobile_riddle_lock_view_1774605224260.png)
+
+## 🛠️ Tech Stack
+
+---
+
 ## 🏗️ Architecture
 
 ```

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "cleanUrls": true,
+  "regions": ["cdg1"],
+  "env": {
+    "NEXT_PUBLIC_STELLAR_RPC_URL": "https://soroban-testnet.stellar.org",
+    "NEXT_PUBLIC_NATIVE_TOKEN_ID": "CAS3J7GYLGXGR6AK3Y3S3S6KC3XGAKTSOAT5QZCH6F6N6K6ZAKTSOAT5"
+  }
+}

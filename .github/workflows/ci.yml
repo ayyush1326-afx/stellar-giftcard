@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  test-contracts:
+    name: Test Soroban Contracts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+          
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: "contracts -> target"
+
+      - name: Run Contract Tests
+        run: |
+          cd contracts
+          cargo test
+
+  build-frontend:
+    name: Build Next.js Frontend
+    runs-on: ubuntu-latest
+    needs: test-contracts
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+        env:
+          NEXT_PUBLIC_STELLAR_RPC_URL: "https://soroban-testnet.stellar.org"
+          NEXT_PUBLIC_FACTORY_CONTRACT_ID: "CC_PLACEHOLDER"
+          NEXT_PUBLIC_VAULT_WASM_HASH: "HASH_PLACEHOLDER"
+          NEXT_PUBLIC_NATIVE_TOKEN_ID: "CAS3J7GYLGXGR6AK3Y3S3S6KC3XGAKTSOAT5QZCH6F6N6K6ZAKTSOAT5"

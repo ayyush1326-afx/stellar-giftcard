@@ -20,6 +20,14 @@ pub enum DataKey {
     IsInitialized,
 }
 
+#[contracttype]
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct VaultInfo {
+    pub lock_type: LockType,
+    pub amount: i128,
+    pub recipient: Address,
+}
+
 #[contract]
 pub struct GiftVault;
 
@@ -58,6 +66,12 @@ impl GiftVault {
         }
         
         env.storage().instance().set(&DataKey::IsInitialized, &true);
+
+        // Emit Initialization Event
+        env.events().publish(
+            (soroban_sdk::symbol_short!("vault"), soroban_sdk::symbol_short!("init")),
+            (recipient, amount, token_address)
+        );
     }
 
     pub fn claim(env: Env, riddle_answer: Option<Bytes>) {
@@ -89,17 +103,28 @@ impl GiftVault {
 
         let token_client = token::Client::new(&env, &token_address);
         token_client.transfer(&env.current_contract_address(), &recipient, &amount);
+
+        // Emit Claim Event
+        env.events().publish(
+            (soroban_sdk::symbol_short!("vault"), soroban_sdk::symbol_short!("claim")),
+            (recipient, amount)
+        );
     }
 
-    /// Read-only: returns (lock_type, amount, recipient) for the frontend to display.
-    pub fn get_info(env: Env) -> (LockType, i128, Address) {
+    /// Read-only: returns VaultInfo for the frontend to display.
+    pub fn get_info(env: Env) -> VaultInfo {
         if !env.storage().instance().has(&DataKey::IsInitialized) {
             panic!("not initialized");
         }
         let lock_type: LockType = env.storage().instance().get(&DataKey::LockType).unwrap();
         let amount: i128 = env.storage().instance().get(&DataKey::Amount).unwrap();
         let recipient: Address = env.storage().instance().get(&DataKey::Recipient).unwrap();
-        (lock_type, amount, recipient)
+        
+        VaultInfo {
+            lock_type,
+            amount,
+            recipient,
+        }
     }
 }
 

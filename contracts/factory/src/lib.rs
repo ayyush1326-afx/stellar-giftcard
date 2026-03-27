@@ -1,6 +1,6 @@
 #![no_std]
 use soroban_sdk::{contract, contractimpl, Address, BytesN, Env, token};
-use gift_vault::{GiftVaultClient, LockType};
+use gift_vault::{GiftVaultClient, LockType, VaultInfo};
 
 #[contract]
 pub struct GiftFactory;
@@ -40,5 +40,15 @@ impl GiftFactory {
             &lock_value_hash,
         );
 
-        vault_addr
+        // Emit Factory Event
+        env.events().publish(
+            (soroban_sdk::symbol_short!("factory"), soroban_sdk::symbol_short!("create")),
+            (vault_addr.clone(), recipient, amount, lock_type)
+        );
 
+        vault_addr
+    }
+}
+
+#[cfg(test)]
+mod test;
