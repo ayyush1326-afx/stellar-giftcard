@@ -20,7 +20,7 @@ A decentralized gift card system on the **Stellar Testnet** where funds are "wra
 
 ---
 
-## 🏆 Level 2 Certification Highlights
+## 🏆 Level 4 Certification Highlights
 - **Advanced Contract Patterns**: Implementation of the **Factory Pattern** for secure, automated vault deployment.
 - **Inter-Contract Calls**: Factory contract securely invokes the Vault's initialization logic.
 - **Soroban Events**: Production-grade event tracking for all creation, initialization, and claim actions.
