@@ -28,7 +28,7 @@ A decentralized gift card system on the **Stellar Testnet** where funds are "wra
 - **Mobile Responsive**: 100% pixel-perfect mobile-first design with 3D interactions optimized for touch.
 
 ## 🚀 Live Demo & Deployment
-- **Live Demo**: [stellar-giftcard.vercel.app](https://stellar-giftcard.vercel.app) (Replace with your actual Vercel URL)
+- **Live Demo**: [stellar-giftcard.vercel.app](https://stellar-giftcard.vercel.app)
 - **CI/CD Pipeline**: [![CI status](https://github.com/ayyush1326-afx/stellar-giftcard/actions/workflows/ci.yml/badge.svg)](https://github.com/ayyush1326-afx/stellar-giftcard/actions)
 
 ## 📸 Final Proof of Work
@@ -186,4 +186,4 @@ stellar.giftcard/
 
 ## 👤 Author
 
-Built on the **Stellar/Soroban** platform as a demonstration of programmable gift card infrastructure.
+**Built by Ayush** — exploring the future of programmable finance on the **Stellar/Soroban** platform.
