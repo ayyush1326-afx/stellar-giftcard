@@ -1,0 +1,19 @@
+[package]
+name = "gift_factory"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+testutils = ["soroban-sdk/testutils", "gift_vault/testutils"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+gift_vault = { path = "../vault" }
+
+[dev_dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+gift_vault = { path = "../vault", features = ["testutils"] }
