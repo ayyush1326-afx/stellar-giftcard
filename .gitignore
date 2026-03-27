@@ -1,0 +1,29 @@
+# Stellar GiftCard Gitignore
+
+# Node
+node_modules/
+.next/
+out/
+build/
+
+# Soroban
+target/
+Cargo.lock
+**/error.log
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Artifacts
+brain/
+**/tmp/
