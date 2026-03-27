@@ -28,13 +28,17 @@ A decentralized gift card system on the **Stellar Testnet** where funds are "wra
 - **Mobile Responsive**: 100% pixel-perfect mobile-first design with 3D interactions optimized for touch.
 
 ## 🚀 Live Demo & Deployment
-- **Live Demo**: [stellar-giftcard.vercel.app](https://stellar-giftcard.vercel.app) (Draft Ready)
-- **CI/CD Pipeline**: ![CI Workflow](https://github.com/user/stellar-giftcard/actions/workflows/ci.yml/badge.svg)
+- **Live Demo**: [stellar-giftcard.vercel.app](https://stellar-giftcard.vercel.app) (Replace with your actual Vercel URL)
+- **CI/CD Pipeline**: [![CI status](https://github.com/ayyush1326-afx/stellar-giftcard/actions/workflows/ci.yml/badge.svg)](https://github.com/ayyush1326-afx/stellar-giftcard/actions)
 
 ## 📸 Final Proof of Work
-### Mobile Responsive View
-![Mobile Home View](/C:/Users/Dell/.gemini/antigravity/brain/148740ec-a03f-4a68-8a79-3e8ddcaac5f5/mobile_home_page_1774605200041.png)
-![Mobile Interaction View](/C:/Users/Dell/.gemini/antigravity/brain/148740ec-a03f-4a68-8a79-3e8ddcaac5f5/mobile_riddle_lock_view_1774605224260.png)
+### Desktop & Mobile Layouts
+![Desktop Overview](media/desktop_home.png)
+![Mobile Home View](media/mobile_home.png)
+![Mobile Interaction View](media/mobile_riddle.png)
+
+### 📹 Demo Walkthrough
+![Full Demo Recording](media/demo_recording.webp)
 
 ## 🛠️ Tech Stack
 
